@@ -12,7 +12,8 @@ int (*catch_function(const char *format))(va_list)
 	unsigned int i = 0;
 	code_f catch_f[] = {
 		{"c", print_char},
-		{"s", print_string}
+		{"s", print_string},
+		{"%", (int (*)(va_list))print_percentage},
 		{NULL, NULL}
 	};
 
