@@ -10,17 +10,17 @@
 /**
  *struct code_format - format structure
  *@specs: specifiers
- *@func: corresponding function
+ *@f: corresponding function
  */
 typedef struct code_format
 {
 	char *specs;
 	int (*f)(va_list);
-}code_f;
+} code_f;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char (va_list c);
-int print_percentage (void);
+int print_string(va_list s);
 
 #endif

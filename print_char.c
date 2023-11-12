@@ -1,12 +1,12 @@
 #include "main.h"
 
-/*
+/**
  *print_char - print character c
  *@c: printed character
  *Return: 1 (success)
  */
 
-int print_char (va_list c)
+int print_char(va_list c)
 {
 	unsigned char chary;
 
