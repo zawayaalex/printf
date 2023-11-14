@@ -5,6 +5,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
  *struct fn_params - struct for calling printing functions
@@ -16,7 +17,7 @@ typedef struct fn_params
 {
 	char *ptr_sp;
 	int (*ptr_fn)();
-} func_params;
+} fn_params;
 
 
 char _putchar(char c);
