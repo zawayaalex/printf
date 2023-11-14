@@ -11,8 +11,8 @@ int pr_str(va_list argus)
 	int l, c;
 	char *s_sp = va_arg(argus, char *);
 
-	i = strlen(s_sp);
+	l = strlen(s_sp);
 	for (c = 0; c < l; c++)
-		putchar(s_sp[j]);
+		putchar(s_sp[c]);
 	return (l);
 }
