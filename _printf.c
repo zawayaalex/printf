@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 
 	va_list args;
 
-	unsigned int i = 0, count = 0, str_count;
+	unsigned int i, count = 0, str_count;
 
 	if  (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
@@ -39,8 +39,9 @@ int _printf(const char *format, ...)
 		{
 			put_chary('%');
 		}
-		count++;
+		count += 1;
 	}
+
 	va_end(args);
 	return (count);
 }
