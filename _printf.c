@@ -25,19 +25,9 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == 's')
 		{
-			char *str = va_arg(args, char *);
-
-			if (str == NULL)
-			{
-				put_s("(null)");
-				count += 6;
-			}
-			else
-			{
-			str_count = put_s(str);
+			str_count = put_s(va_arg(args, char *));
 			i++;
 			count += (str_count - 1);
-			}
 		}
 		else if (format[i + 1] == '%')
 		{
