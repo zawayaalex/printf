@@ -30,13 +30,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == 's')
 		{
-			str = va_arg(args, char *);
-			if (str == NULL)
-			{
-				put_s("(null)");
-				count += 6;
-			}
-			str_count = put_s(str);
+			str_count = put_s(va_arg(args, char *));
 			i++;
 			count += (str_count - 1);
 		}
