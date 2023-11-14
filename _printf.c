@@ -1,72 +1,42 @@
 #include "main.h"
 
 /**
- *catch_function - function finds printf format
- *and call corresponding function
- *@format: a character string from _printf
- *Return: the function or NULL
- */
-
-int (*catch_function(const char *format))(va_list)
-{
-	unsigned int i = 0;
-	code_f catch_f[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"%", (int (*)(va_list))print_percentage},
-		{NULL, NULL}
-	};
-
-	while (catch_f[i].specs)
-	{
-		if (catch_f[i].specs[0] == (*format))
-			return (catch_f[i].f);
-		i++;
-	}
-	return (NULL);
-}
-
-/**
  *_printf - printf function
- *@format: format character string
- *Return:  the number of characters printed
+ *@format: format character string specifier
+ *Return: number of characters printed
  */
 
 int _printf(const char *format, ...)
 {
 
 	va_list args;
-	int (*f)(va_list);
-	unsigned int i = 0, count = 0;
 
-	if (format == NULL)
-		return (-1);
+	unsigned int i = 0, count = 0, str_count;
+
 	va_start(args, format);
-	while (format[i])
+
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		while (format[i] != '%' && format[i])
+		if (format[i] != '%')
 		{
-			_putchar(format[i]);
-			count++;
+			put_chary(format[i]);
+		}
+		else if (format[i + 1] == 'c')
+		{
+			put_chary(va_arg(args, int));
 			i++;
 		}
-		if (format[i] == '\0')
-			return (count);
-		f = catch_function(&format[i + 1]);
-		if (f != NULL)
+		else if (format[i + 1] == 's')
 		{
-			count += f(args);
-			i += 2;
-			continue;
+			str_count = put_s(va_arg(args, char *));
+			i++;
+			count += (str_count - 1);
 		}
-		if (!format[i + 1])
-			return (-1);
-		_putchar(format[i]);
+		else if (format[i + 1] == '%')
+		{
+			put_chary('%');
+		}
 		count++;
-		if (format[i + 1] == '%')
-			i += 2;
-		else
-			i++;
 	}
 	va_end(args);
 	return (count);
