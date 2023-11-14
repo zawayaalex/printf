@@ -9,9 +9,6 @@
 int _printf(const char *format, ...)
 {
 	unsigned int i, count = 0, str_count;
-	char *str;
-
-	va_start(args, format);
 
 	if  (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
