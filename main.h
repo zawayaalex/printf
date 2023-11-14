@@ -1,10 +1,8 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef MAIN_H_
+#define MAIN_H_
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#include <limits.h>
 #include <unistd.h>
 
 char put_chary(char c);

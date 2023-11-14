@@ -8,16 +8,15 @@
 
 int _printf(const char *format, ...)
 {
-
-	va_list args;
-
 	unsigned int i, count = 0, str_count;
+	char *str;
+
+	va_start(args, format);
 
 	if  (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
 	va_start(args, format);
-
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
@@ -31,7 +30,13 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == 's')
 		{
-			str_count = put_s(va_arg(args, char *));
+			str = va_arg(args, char *);
+			if (str == NULL)
+			{
+				put_s("(null)");
+				count += 6;
+			}
+			str_count = put_s(str);
 			i++;
 			count += (str_count - 1);
 		}
@@ -41,7 +46,6 @@ int _printf(const char *format, ...)
 		}
 		count += 1;
 	}
-
 	va_end(args);
 	return (count);
 }
