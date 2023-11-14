@@ -15,8 +15,8 @@
  */
 typedef struct fn_params
 {
-	char *ptr_sp;
 	int (*ptr_fn)();
+	char *ptr_sp;
 } fn_params;
 
 
