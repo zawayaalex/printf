@@ -11,7 +11,7 @@ int printf(const char *format, ...)
 int counted = 0, i = 0, a = 0;
 va_list argus;
 fn_params find_sp[] = {
-{pr_char, "%c"}, {pr_str, %s}};
+{pr_char, "%c"}, {pr_str, "%s"}, {pr_perc}};
 if (!format || (format[0] == '%' && !format[1]))
 return (-1);
 if (format[0] == '%' && format[1] == ' ' && !format[2])
@@ -22,9 +22,9 @@ look:
 while (format[i] != '\0')
 {
 a = 0;
-while (a < 13)
+while (a < 3)
 {
-if (format[i] == find_sp[a].ptr_sp[0] && format[i+1] == find_sp[a].ptr_sp[1])
+if (format[i] == find_sp[a].ptr_sp[0] && format[i + 1] == find_sp[a].ptr_sp[1])
 {
 counted += find_sp[a].ptr_fn(argus);
 i = i + 2;
@@ -37,5 +37,5 @@ counted++;
 i++;
 }
 va_end(argus);
-return(counted);
+return (counted);
 }
