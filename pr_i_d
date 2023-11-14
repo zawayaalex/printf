@@ -5,3 +5,8 @@
 *@argus: arguments
 * Return: length
 */
+
+int pr_i_d(va_list argus)
+{
+int ptr = va_arg(argus, int);
+int i = 1;
