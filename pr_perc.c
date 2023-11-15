@@ -7,6 +7,7 @@
 
 int pr_perc(void)
 {
-putchar('%');
+int x = 37;
+write(1, &x, 1);
 return (1);
 }
