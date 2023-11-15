@@ -9,5 +9,5 @@
 int pr_perc(void)
 {
 putchar('%');
-return (0);
+return (1);
 }
