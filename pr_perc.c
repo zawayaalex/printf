@@ -2,11 +2,12 @@
 
 /**
 * pr_perc - function that prints %
+* Description: fucntion
 * Return: always 1
 */
 
 int pr_perc(void)
 {
-write(1, "%", 1);
+putchar('%');
 return (1);
 }

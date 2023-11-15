@@ -3,6 +3,7 @@
 /**
 * _printf - our own printf function that prints user inputs
 * @format: pointer to the format input
+* Description: fucntion
 * Return: if fail = -1 if success =  count of what was printed
 */
 

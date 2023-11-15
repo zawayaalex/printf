@@ -2,6 +2,7 @@
 
 /**
 * pr_char - function that prints character
+* Description: fucntion
 * @argus: arguments passed to the functions
 * Return: 1 for a single char
 */

@@ -3,6 +3,7 @@
 /**
 * pr_i_d - function that prints i or d
 * @argus: length
+* Description: fucntion
 * Return: counter i
 */
 
