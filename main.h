@@ -25,5 +25,6 @@ int _printf(const char *format, ...);
 int pr_str(va_list argus);
 int pr_char(va_list argus);
 int pr_perc(void);
+int pr_i_d(va_list argus);
 
 #endif
