@@ -29,9 +29,10 @@ if (absolut > 0)
 {
 while (absolut / 10 != 0)
 {
-tmp = tmp * 10;
+tmp *= 10;
 absolut = absolut / 10;
 }
+absolut = ptr;
 while (tmp > 0)
 {
 current = absolut / tmp;
