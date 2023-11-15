@@ -3,6 +3,7 @@
 /**
  * pr_str - function prints string
  * @argus: the argument input
+ * Description: Function
  * Return: string_length
  */
 

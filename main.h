@@ -6,10 +6,11 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
+#include <limits.h>
 
 /**
  *struct fn_params - struct for calling printing functions
- *
+ * Description: struct
  * @ptr_sp: pointer to specifier
  * @ptr_fn: pointer to requested function
  */
